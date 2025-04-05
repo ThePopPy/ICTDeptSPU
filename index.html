@@ -3,165 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    {% block title %}
-    {% endblock %}
-    <style>
-        /* ฟอนต์และการตั้งค่าเริ่มต้น */
-        * {
-            font-family: "Prompt", sans-serif;
-            font-weight: 400;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* ปรับ Navbar ให้ดูสวยขึ้น */
-        .navbar {
-            background-color: #343a40; /* สีเข้ม */
-            padding: 1rem;
-        }
-
-        .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #ffffff !important;
-        }
-
-        .nav-link {
-            font-size: 1.2rem;
-            color: #ffffff !important;
-        }
-
-        .nav-link:hover {
-            color: #f8b400 !important;
-        }
-
-        /* ปรับ Background Section ให้ดูสวยขึ้น */
-        .header-section {
-            width: 100%;
-            height: 40vh;
-            background: url(https://cdn.pixabay.com/photo/2024/11/23/11/11/pecan-nut-9218708_1280.jpg) center no-repeat;
-            background-size: cover;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-
-        /* ทำให้ภาพ Background มืดลงเพื่อให้ตัวหนังสืออ่านง่าย */
-        .header-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* สีดำโปร่งแสง */
-        }
-
-        .header-text {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* ปรับขนาดและสไตล์ของภาพ */
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        img:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Container Styling */
-        .container-custom {
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-
-        /* Footer Styling */
-        .footer {
-            background: #343a40;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-.box{
-    border: 1px solid gray;
-    padding: 2rem;
-    margin-top: 4rem;
-}
-
-.flex{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.flex >*{
-    margin: 3px;
-}
-iframe{
-    width: 100%;
-    height: 400px;
-}
-    </style>
+    <title>Google Sheets Web</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="/">ICT12367 SPU</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/">หน้าแรก</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/form">ลงทะเบียน</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">เกี่ยวกับเรา</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Website</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-4">
+        <h1>ข้อมูลจาก Google Sheets</h1>
     </header>
 
-    <!-- Header Section -->
-    <section class="header-section">
-        <div class="header-overlay"></div>
-        <div class="header-text">
-            <h1 class="fw-bold">ยินดีต้อนรับสู่เว็บไซต์ของรายวิชา ICT12367</h1>
-            <!-- <p>ระบบลงทะเบียนจัดการข้อมูลประชากรที่ดีที่สุด</p> -->
-        </div>
-    </section>
-         
-      <!-- Content Section -->
-    <div class="container-custom">
-        <h1>Test Page</h1>
-     </div>
-          
- <!-- Footer -->
-  <div class="container-fluid">
-    <footer class="footer">
-        <p>&copy; 2024 ICT12367 SPU | Information Technology</p>
-    </footer>
-  </div>
- 
+    <!-- Body -->
+    <div class="container my-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr id="table-header"></tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
 
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 My Website</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
