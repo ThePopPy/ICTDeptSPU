@@ -46,33 +46,51 @@ function populateFilter(values) {
     });
 }
 
-function displayData(data) {
+function displayData(values) {
   const tableBody = document.getElementById("data-table-body");
   tableBody.innerHTML = "";
 
-  data.forEach((row) => {
-    const tableRow = document.createElement("tr");
+  if (!values || values.length === 0) {
+    tableBody.innerHTML = "<tr><td colspan='2'>ไม่พบข้อมูล</td></tr>";
+    return;
+  }
 
-    // แสดงเฉพาะ "Project" และ "Link"
+  const headers = values[0]; // แถวแรกคือชื่อคอลัมน์
+  const projectIndex = headers.indexOf("Project");
+  const linkIndex = headers.indexOf("Link");
+
+  if (projectIndex === -1 || linkIndex === -1) {
+    tableBody.innerHTML = "<tr><td colspan='2'>ไม่พบคอลัมน์ที่ต้องการ</td></tr>";
+    return;
+  }
+
+  const rows = values.slice(1); // ข้อมูลจริง เริ่มจากแถวที่ 2
+
+  rows.forEach(row => {
+    const tr = document.createElement("tr");
+
+    // Project column
     const projectCell = document.createElement("td");
-    projectCell.textContent = row.Project || "";
-    tableRow.appendChild(projectCell);
+    projectCell.textContent = row[projectIndex] || "";
+    tr.appendChild(projectCell);
 
+    // Link column
     const linkCell = document.createElement("td");
-    if (row.Link) {
+    if (row[linkIndex]) {
       const link = document.createElement("a");
-      link.href = row.Link;
-      link.textContent = "Link";
+      link.href = row[linkIndex];
+      link.textContent = "ดูโปรเจกต์";
       link.target = "_blank";
       linkCell.appendChild(link);
     } else {
       linkCell.textContent = "";
     }
-    tableRow.appendChild(linkCell);
+    tr.appendChild(linkCell);
 
-    tableBody.appendChild(tableRow);
+    tableBody.appendChild(tr);
   });
 }
+
 
 
 fetchData();
