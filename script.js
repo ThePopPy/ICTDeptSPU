@@ -46,7 +46,6 @@ function populateFilter(values) {
     });
 }
 
-
 function displayData(values) {
     const tableHeader = document.getElementById("table-header");
     const tableBody = document.getElementById("table-body");
@@ -54,31 +53,23 @@ function displayData(values) {
     tableHeader.innerHTML = "";
     tableBody.innerHTML = "";
 
-    if (values.length === 0) return;
-
-    const headers = values[0];
-    
-    // ระบุชื่อคอลัมน์ที่ต้องการแสดง
-    const selectedCols = ["Year", "Project", "Link"];
-    const colIndexes = selectedCols.map(col => headers.indexOf(col));
-
-    // Header
-    selectedCols.forEach(col => {
-        const th = document.createElement("th");
-        th.textContent = col;
-        tableHeader.appendChild(th);
-    });
-
-    // Rows
-    values.slice(1).forEach(row => {
-        const tr = document.createElement("tr");
-        colIndexes.forEach(i => {
-            const td = document.createElement("td");
-            td.textContent = row[i] || ""; // กัน index ไม่ตรง
-            tr.appendChild(td);
+    if (values.length > 0) {
+        values[0].forEach(header => {
+            const th = document.createElement("th");
+            th.textContent = header;
+            tableHeader.appendChild(th);
         });
-        tableBody.appendChild(tr);
-    });
+
+        values.slice(1).forEach(row => {
+            const tr = document.createElement("tr");
+            row.forEach(cell => {
+                const td = document.createElement("td");
+                td.textContent = cell;
+                tr.appendChild(td);
+            });
+            tableBody.appendChild(tr);
+        });
+    }
 }
 
 fetchData();
