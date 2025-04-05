@@ -46,30 +46,33 @@ function populateFilter(values) {
     });
 }
 
-function displayData(values) {
-    const tableHeader = document.getElementById("table-header");
-    const tableBody = document.getElementById("table-body");
+function displayData(data) {
+  const tableBody = document.getElementById("data-table-body");
+  tableBody.innerHTML = "";
 
-    tableHeader.innerHTML = "";
-    tableBody.innerHTML = "";
+  data.forEach((row) => {
+    const tableRow = document.createElement("tr");
 
-    if (values.length > 0) {
-        values[0].forEach(header => {
-            const th = document.createElement("th");
-            th.textContent = header;
-            tableHeader.appendChild(th);
-        });
+    // แสดงเฉพาะ "Project" และ "Link"
+    const projectCell = document.createElement("td");
+    projectCell.textContent = row.Project || "";
+    tableRow.appendChild(projectCell);
 
-        values.slice(1).forEach(row => {
-            const tr = document.createElement("tr");
-            row.forEach(cell => {
-                const td = document.createElement("td");
-                td.textContent = cell;
-                tr.appendChild(td);
-            });
-            tableBody.appendChild(tr);
-        });
+    const linkCell = document.createElement("td");
+    if (row.Link) {
+      const link = document.createElement("a");
+      link.href = row.Link;
+      link.textContent = "Link";
+      link.target = "_blank";
+      linkCell.appendChild(link);
+    } else {
+      linkCell.textContent = "";
     }
+    tableRow.appendChild(linkCell);
+
+    tableBody.appendChild(tableRow);
+  });
 }
+
 
 fetchData();
