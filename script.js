@@ -1,7 +1,7 @@
 // ใส่ Google Sheets ID และ API Key ของคุณ
-const SHEET_ID = "YOUR_GOOGLE_SHEET_ID";
-const API_KEY = "YOUR_GOOGLE_API_KEY";
-const SHEET_NAME = "Sheet1"; // ชื่อชีต
+const SHEET_ID = "1aTyzgqxB_00JRFPo0bHa51o5K_4SDjHgGzONofNmXmE";
+const API_KEY = "AIzaSyDG14fqJaf81IbjlVv2Q_4ofYRlySJjaUk";
+const SHEET_NAME = "ProjectStd"; // ชื่อชีต
 
 const API_URL = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`;
 
