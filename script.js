@@ -18,27 +18,34 @@ async function fetchData() {
 }
 
 function populateFilter(values) {
-    const filterSelect = document.getElementById("year-filter");
-    const headers = values[0];
-    
-    const yearIndex = headers.indexOf("Year");
-    const yesrs = [...new Set(values.slice(1).map(row => row[yearIndex]))];
+    const yearSelect = document.getElementById("year-select");
+    yearSelect.innerHTML = ""; // ล้างตัวเลือกเก่า
 
-    years.forEach(year => {
+    const optionAll = document.createElement("option");
+    optionAll.value = "";
+    optionAll.textContent = "-- แสดงทุกปี --";
+    yearSelect.appendChild(optionAll);
+
+    const yearIndex = values[0].indexOf("Year"); // หาตำแหน่ง column "Year"
+
+    if (yearIndex === -1) return; // ถ้าไม่เจอ column "Year" ให้หยุด
+
+    const years = new Set();
+
+    values.slice(1).forEach(row => {
+        if (row[yearIndex]) {
+            years.add(row[yearIndex]);
+        }
+    });
+
+    [...years].sort().forEach(year => {
         const option = document.createElement("option");
         option.value = year;
         option.textContent = year;
-        filterSelect.appendChild(option);
-    });
-
-    filterSelect.addEventListener("change", () => {
-        const selected = filterSelect.value;
-        const filtered = selected === "all" 
-            ? allData 
-            : [values[0], ...values.slice(1).filter(row => row[yearIndex] === selected)];
-        displayData(filtered);
+        yearSelect.appendChild(option);
     });
 }
+
 
 function displayData(values) {
     const tableHeader = document.getElementById("table-header");
