@@ -92,6 +92,4 @@ function displayData(values) {
   });
 }
 
-
-
 fetchData();
