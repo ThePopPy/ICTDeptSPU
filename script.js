@@ -20,13 +20,14 @@ async function fetchData() {
 function populateFilter(values) {
     const filterSelect = document.getElementById("year-filter");
     const headers = values[0];
-    const deptIndex = headers.indexOf("Year");
+    
+    const yearIndex = headers.indexOf("Year");
     const yesrs = [...new Set(values.slice(1).map(row => row[yearIndex]))];
 
-    years.forEach(dept => {
+    years.forEach(year => {
         const option = document.createElement("option");
-        option.value = dept;
-        option.textContent = dept;
+        option.value = year;
+        option.textContent = year;
         filterSelect.appendChild(option);
     });
 
@@ -34,7 +35,7 @@ function populateFilter(values) {
         const selected = filterSelect.value;
         const filtered = selected === "all" 
             ? allData 
-            : [values[0], ...values.slice(1).filter(row => row[deptIndex] === selected)];
+            : [values[0], ...values.slice(1).filter(row => row[yearIndex] === selected)];
         displayData(filtered);
     });
 }
