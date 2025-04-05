@@ -11,14 +11,8 @@ async function fetchData() {
         const data = await response.json();
         console.log("ข้อมูลจาก Google Sheets:", data); // ตรวจสอบข้อมูล
         allData = data.values;
-
-        const mockValues = [
-          ["Year", "Term", "Project", "Link"],
-          ["2023", "1", "AI Chatbot", "https://example.com/chatbot"],
-          ["2023", "2", "Smart Farm", "https://example.com/farm"]
-        ];
-        populateFilter(mockValues);
-        displayData(mockValues);
+        populateFilter(allData);
+        displayData(allData);
     } catch (error) {
         console.error("Error fetching data:", error);
     }
