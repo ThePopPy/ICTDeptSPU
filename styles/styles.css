@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #007bff;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+h1, h3, h5 {
+    color: #ffffff;
+}
+
+h2, h4, h6 {
+    color: #481479;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: #fff;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.slider {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    box-sizing: border-box;
+    display: none; /* ซ่อนทุกสไลด์ในตอนแรก */
+    width: 100%;
+    max-width: 600px;     /* ขนาดกรอบที่ต้องการ */
+    height: 300px;        /* กำหนดความสูงกรอบ */
+    overflow: hidden;     /* ซ่อนส่วนเกินที่อยู่นอกกรอบ */
+    position: relative;
+    margin: 0 auto;      /* จัดกลางกรอบ */
+    border-width: 5px; /* กำหนดขอบ */
+    border-style: solid; /* กำหนดขอบ */
+    border-color:rgb(86, 98, 167); /* กำหนดสีขอบ */
+    border-radius: 5px; /* กำหนดมุมโค้ง */
+}
+
+.slide.active {
+    display: block; /* แสดงเฉพาะสไลด์ที่มีคลาส 'active' */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* เริ่มต้นซ่อน slides ที่ไม่ต้องการแสดง */
+.fade {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade.active {
+    opacity: 1;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-container img {
+    width: calc(33.333% - 10px);
+    border-radius: 5px;
+}
