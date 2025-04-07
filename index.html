@@ -5,70 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICT Department SPU Web</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/stylesA.css">
+    <link rel="stylesheet" href="styles/stylesC.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-    <!-- Navbar -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-            <a class="navbar-brand" href="https://www.spu.ac.th/">
-              <img src="spu_logo.webp" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
-            </a>
-      </li>
-    </ul>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Showcase</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Activity</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="#">PR Media</a>
-      </li>
-    </ul>
+  <!-- Navbar -->
+    <div id="navbar"></div>
+    
+  <!-- Header -->
+    <div id="header"></div>
+  
+    
+  <!-- Body -->
+<main>
+<section>
+  <div class="slider">
+    <div class="slides">
+        <!-- สไลด์รูปภาพ -->
+        <div class="slide fade">
+            <img src="Images/home/1.jpg" alt="Image 1">
+        </div>
+        <div class="slide fade">
+            <img src="Images/home/2.jpg" alt="Image 2">
+        </div>
+        <div class="slide fade">
+            <img src="Images/home/3.png" alt="Image 3">
+        </div>
+        <div class="slide fade">
+            <img src="Images/home/4.png" alt="Image 4">
+        </div>
+    </div>
   </div>
-</nav>
+</section>
 
-    <!-- Header -->
-    <header class="bg-primary text-white text-center py-4">
-        <h1>สาขาวิชาเทคโนโลยีสารสนเทศ คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุม</h1>
-    </header>
-
-    <!-- Body -->
-    <div class="container mt-3">
-        <select id="year-select" class="form-select form-select-lg">
-          <option value="all">-- แสดงทุกปี --</option>
-        </select>
+  <section id="about"><center>
+    <h2>เกี่ยวกับสาขา</h2>
+    <h6>ชื่อปริญญา</h6>
+    <h6>ภาษาไทย (ชื่อเต็ม) : วิทยาศาสตรบัณฑิต (เทคโนโลยีสารสนเทศและการสื่อสาร)</h6>
+    <h6>(อักษรย่อ) : วท.บ. (เทคโนโลยีสารสนเทศและการสื่อสาร)</h6>
+    <h6>ภาษาอังกฤษ (ชื่อเต็ม) : Bachelor of Science (Information and Communication Technology)</h6>
+    <h6>(อักษรย่อ) : B.S. (Information and Communication Technology)</h6>
+  </section></center>
+  <section id="highlights"><center>
+    <h2>จุดเด่นของสาขา</h2>
+    <h6>ความรู้ด้านเทคโนโลยีสารสนเทศและภาคปฏิบัติควบคู่กันไป</h6>
+    <h6>สาขามีความมุ่งมั่นที่จะสร้างบุคลากรที่มีความรู้ด้านเทคโนโลยีสารสนเทศและภาคปฏิบัติควบคู่กันไป เพื่อรองรับความต้องการของภาคอุตสาหกรรม และผู้ใช้งานในองค์กรด้านเทคโนโลยีสารสนเทศทั้งในประเทศและต่างประเทศ</h6>
+  </section></center>
+  <section id="tuition"><center>
+    <h2>แผนการเรียน</h2>
+    <img src="https://www.spu.ac.th/fac/informatics/wp-content/uploads/sites/10/2023/03/20170308134827.jpg" alt="Study Plan" style="width:650px;" class="img-fluid">
+  </section></center>
+  <section id="gallery">
+    <h2>แกลเลอรี่</h2>
+    <div class="gallery-container">
+        <!-- รูปภาพจะถูกเพิ่มโดย JavaScript -->
     </div>
-    <div class="container mt-3">
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-    </div>
-    <div class="container my-4">
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Project</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody id="data-table-body"></tbody>
-        </table>
-    </div>
+  </section>
+</main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 ICT SPU</p>
-    </footer>
+  <p>&nbsp;</p>  
+  <!-- Footer -->
+    <div id="footer"></div>
 
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/scriptC.js"></script>
 </body>
 </html>
