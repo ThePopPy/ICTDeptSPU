@@ -2,11 +2,15 @@
 
 เว็บไซต์นี้จัดทำขึ้นเพื่อเผยแพร่ข้อมูลเกี่ยวกับ สาขาวิชาเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยศรีปทุม (Sripatum University)
 เนื้อหาภายในครอบคลุมข้อมูลของหลักสูตร รายวิชา จุดเด่น ผลลัพธ์การเรียนรู้ (PLO) และแนวทางอาชีพของนักศึกษา
+
 📸 Website Preview
-![screenshot of homepage](screenshot/screenshot1.png)
-![screenshot of homepage](screenshot/screenshot2.png)
-![screenshot of homepage](screenshot/screenshot3.png)
-![screenshot of homepage](screenshot/screenshot4.png)
+![screenshot of homepage](screenshots/screenshot1.png)
+
+![screenshot of homepage](screenshots/screenshot2.png)
+
+![screenshot of homepage](screenshots/screenshot3.png)
+
+![screenshot of homepage](screenshots/screenshot4.png)
 
 🔍 Features
 
